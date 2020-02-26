@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "359561223874",
+    "firebase_url": "https://victume-965ec.firebaseio.com",
+    "project_id": "victume-965ec",
+    "storage_bucket": "victume-965ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359561223874:android:7c614518300995132f655b",
+        "android_client_info": {
+          "package_name": "com.healty.victume"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359561223874-hsc43junlb8pjgvd0jbkejdoa9qghddu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGHVYdz7AtdyKEEQSfkhZb_0nQC1hyElY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359561223874-hsc43junlb8pjgvd0jbkejdoa9qghddu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+{
+  "asset": "asset:victume_mobile/lib/di/modules/mobx_module.dart",
+  "summary": {
+    "injector": [],
+    "module": [
+      {
+        "name": "MobxModule",
+        "providers": [
+          {
+            "name": "provideUserProfileStore",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/stores/user_profile/user_profile_store.dart#UserProfileStore",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": true,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideNotificationSenderStore",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/stores/notification/notification_sender.dart#NotificationSenderStore",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": true,
+            "asynchronous": false,
+            "dependencies": []
+          }
+        ]
+      }
+    ],
+    "injectable": []
+  }
+}

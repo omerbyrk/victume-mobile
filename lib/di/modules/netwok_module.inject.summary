@@ -1,0 +1,224 @@
+{
+  "asset": "asset:victume_mobile/lib/di/modules/netwok_module.dart",
+  "summary": {
+    "injector": [],
+    "module": [
+      {
+        "name": "NetworkModule",
+        "providers": [
+          {
+            "name": "provideDio",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:dio/lib/src/dio.dart#Dio",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": true,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideDioClient",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/network/dio_client.dart#DioClient",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideUserApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/UserApi.dart#UserApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideParameterApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/ParameterApi.dart#ParameterApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideUserProgramApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/UserProgramApi.dart#UserProgramApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideTaskApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/TaskApi.dart#TaskApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideProgramApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/ProgramApi.dart#ProgramApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideTaskAlarmApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/TaskAlarmApi.dart#TaskAlarmApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideTaskResultApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/TaskResultApi.dart#TaskResultApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideProgramDialogApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/ProgramDialogApi.dart#ProgramDialogApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideProfileApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/ProfileApi.dart#ProfileApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideAchievementApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/AchievementApi.dart#AchievementApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideNotificationUserApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/NotificationUserApi.dart#NotificationUserApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideParameterValueApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/ParameterValueApi.dart#ParameterValueApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideUserFileApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/UserFileApi.dart#UserFileApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          }
+        ]
+      }
+    ],
+    "injectable": []
+  }
+}

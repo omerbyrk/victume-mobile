@@ -1,0 +1,8 @@
+{
+  "asset": "asset:victume_mobile/lib/data/network/dio_client.dart",
+  "summary": {
+    "injector": [],
+    "module": [],
+    "injectable": []
+  }
+}
