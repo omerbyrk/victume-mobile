@@ -1,4 +1,6 @@
 import 'package:victume_mobile/data/AchievementApi.dart';
+import 'package:victume_mobile/data/MessageApi.dart';
+import 'package:victume_mobile/data/MessageContainerApi.dart';
 import 'package:victume_mobile/data/NotificationUserApi.dart';
 import 'package:victume_mobile/data/ParameterApi.dart';
 import 'package:victume_mobile/data/ParameterValueApi.dart';
@@ -17,6 +19,7 @@ import 'package:victume_mobile/di/modules/mobx_module.dart';
 import 'package:victume_mobile/di/modules/netwok_module.dart';
 import 'package:victume_mobile/main.dart';
 import 'package:victume_mobile/stores/notification/notification_sender.dart';
+import 'package:victume_mobile/stores/user_profile/user_profile_message_store.dart';
 import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
 import 'package:victume_mobile/utils/screen/ScreenUtils.dart';
 import 'package:inject/inject.dart';
@@ -66,12 +69,18 @@ abstract class AppComponent {
   ParameterValueApi getParameterValueApi();
   @provide
   UserFileApi getUserFileApi();
+  @provide
+  MessageContainerApi getMessageContainerApi();
+  @provide
+  MessageApi getMessageApi();
 
   // locale - mobx
   @provide
   SharedPreferenceHelper getSharedPreferenceHelper();
   @provide
   UserProfileStore getUserProfileStore();
+  @provide
+  UserProfileMessageStore getUserProfileMessageStore();
   @provide
   NotificationSenderStore getNotificationSenderStore();
   @provide

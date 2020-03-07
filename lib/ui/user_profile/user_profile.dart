@@ -5,6 +5,7 @@ import 'package:victume_mobile/models/widget/CustomMenuButtonItem.dart';
 import 'package:victume_mobile/routes.dart';
 import 'package:victume_mobile/stores/login/login_store.dart';
 import 'package:victume_mobile/stores/notification/notification_sender.dart';
+import 'package:victume_mobile/stores/user_profile/user_profile_message_store.dart';
 import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
 import 'package:victume_mobile/ui/ScreenStatefulBase.dart';
 import 'package:victume_mobile/ui/achievement/achievement_list.dart';
@@ -26,28 +27,20 @@ class UserProfileScreen extends StatefulWidget {
 
 class _UserProfileScreenState extends ScreenStatefulBase<UserProfileScreen> {
   final UserProfileStore _userProfileStore = appComponent.getUserProfileStore();
+  final UserProfileMessageStore _userProfileMessageStore =
+      appComponent.getUserProfileMessageStore();
   final NotificationSenderStore _notificationSenderStore =
       appComponent.getNotificationSenderStore();
 
   @override
   void initState() {
     super.initState();
-    this._userProfileStore.clearStore();
-    this._userProfileStore.setAuthUser();
-    this._userProfileStore.setAuthUserParameters();
-    this._userProfileStore.setAuthUserPrograms();
-    this._userProfileStore.setAuthUserNotifications();
-
-    this.doDelayedTask(
-        () => {
-              if (this._userProfileStore.authUserParameters.length == 0)
-                {
-                  this
-                      ._notificationSenderStore
-                      .sendParameterNotFoundNotification()
-                }
-            },
-        duration: Duration(seconds: 10));
+    this._userProfileStore.initStore().whenComplete(() {
+      if (this._userProfileStore.authUserParameters.length == 0) {
+        this._notificationSenderStore.sendParameterNotFoundNotification();
+      }
+      _userProfileMessageStore.initStore();
+    });
   }
 
   @override
@@ -90,12 +83,14 @@ class _UserProfileScreenState extends ScreenStatefulBase<UserProfileScreen> {
           children: <Widget>[
             InkWell(
               splashColor: Colors.red.withOpacity(.9),
-              child: BadgettedIcon(
-                  iconData: Icons.message,
-                  size: calIconSize(IconSizeType.Large),
-                  number: 0,
-                  color: Colors.white),
-              onTap: () {
+              child: Observer(builder: (_) {
+                return BadgettedIcon(
+                    iconData: Icons.message,
+                    size: calIconSize(IconSizeType.Large),
+                    number: this._userProfileMessageStore.authUserUnreaddedMessageCount,
+                    color: Colors.white);
+              }),
+              onTap: () async {
                 navigatePush((_) => MessageScreen());
               },
             ),

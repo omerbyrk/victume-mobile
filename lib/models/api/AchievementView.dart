@@ -11,6 +11,7 @@ class AchievementView extends ApiModelBase {
   String userId;
   String parameterValueId;
   String parameterName;
+  String resultParameterValueId;
   bool result;
   bool active;
 
@@ -21,6 +22,7 @@ class AchievementView extends ApiModelBase {
       this.targetValue,
       this.createdDate,
       this.parameterName,
+      this.resultParameterValueId,
       this.parameterValueId,
       this.targetDate,
       this.userId,
@@ -37,6 +39,7 @@ class AchievementView extends ApiModelBase {
         targetDate: MapConverter.toDateTime(map["targetDate"]),
         userId: map["userId"],
         parameterValueId: map["parameterValueId"],
+        resultParameterValueId: map["resultParameterValueId"],
         result: map["result"],
         active: map["active"],
         parameterName: map["parameterName"]);

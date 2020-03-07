@@ -215,6 +215,34 @@
             "singleton": false,
             "asynchronous": false,
             "dependencies": []
+          },
+          {
+            "name": "provideMessageContainerApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/MessageContainerApi.dart#MessageContainerApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "provideMessageApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/MessageApi.dart#MessageApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
           }
         ]
       }

@@ -9,6 +9,7 @@ class UserView extends ApiModelBase {
   String id;
   String email;
   String fcmUserToken;
+  String mentorId;
   ProfileView profile;
   Role role;
   Institution institution;
@@ -17,6 +18,7 @@ class UserView extends ApiModelBase {
       {this.id,
       this.email,
       this.fcmUserToken,
+      this.mentorId,
       this.profile,
       this.role,
       this.institution});
@@ -26,6 +28,7 @@ class UserView extends ApiModelBase {
         id: map["_id"],
         email: map["email"],
         fcmUserToken: map["fcmUserToken"],
+        mentorId: map["mentorId"],
         profile: MapConverter.toObject<ProfileView>(
             map["profile"], (profile) => ProfileView.fromMap(profile)),
         role: MapConverter.toObject<Role>(

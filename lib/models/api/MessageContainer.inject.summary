@@ -1,5 +1,5 @@
 {
-  "asset": "asset:victume_mobile/lib/stores/message/message_store.dart",
+  "asset": "asset:victume_mobile/lib/models/api/MessageContainer.dart",
   "summary": {
     "injector": [],
     "module": [],

@@ -1,6 +1,5 @@
 class MapConverter {
   static List<T> toList<T>(dynamic objectList, T Function(dynamic) function) {
-    print(objectList);
     if (objectList == null || (objectList is List && objectList.isEmpty))
       return [];
       

@@ -50,6 +50,7 @@ abstract class _UserProfileStore extends BaseStore with Store {
   @observable
   bool showNotifications = false;
 
+
   @action
   void setShowNotificationsValue(bool newValue) {
     this.showNotifications = newValue;
@@ -70,6 +71,8 @@ abstract class _UserProfileStore extends BaseStore with Store {
       uiMessageStore.setError(err.response.data["message"]);
     }
   }
+
+
 
   @action
   Future<void> setAuthUser() async {
@@ -161,6 +164,15 @@ abstract class _UserProfileStore extends BaseStore with Store {
     authUserPrograms = new ObservableList<UserProgramView>();
     authUserProgramDataCount = 0;
     showNotifications = false;
+  }
+
+  @action
+  Future<void> initStore() async {
+    this.clearStore();
+    await this.setAuthUser();
+    this.setAuthUserPrograms();
+    this.setAuthUserNotifications();
+    await this.setAuthUserParameters();
   }
 
   @action

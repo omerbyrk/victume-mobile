@@ -5,6 +5,7 @@ import 'package:victume_mobile/data/UserApi.dart';
 import 'package:victume_mobile/data/sharedpref/shared_preference_helper.dart';
 import 'package:victume_mobile/main.dart';
 import 'package:victume_mobile/routes.dart';
+import 'package:victume_mobile/stores/user_profile/user_profile_message_store.dart';
 import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
 import 'package:victume_mobile/widgets/app_icon_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,22 +19,28 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   SharedPreferenceHelper _helper = appComponent.getSharedPreferenceHelper();
   UserProfileStore _userProfileStore = appComponent.getUserProfileStore();
+  UserProfileMessageStore _messageStore =
+      appComponent.getUserProfileMessageStore();
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
   UserApi _userApi = appComponent.getUserApi();
   @override
   void initState() {
     super.initState();
+    print("Splahddd");
+    Function cofigureFunction = (Map<String, dynamic> message) async {
+      print("SplashScreen");
+      if (message["data"]["type"] == "NOTIFICATION") {
+        fetchAllAuthNotificationIfLoggedIn();
+      } else if (message["data"]["type"] == "MESSAGE") {
+        print(message);
+        _messageStore
+            .pushMessageToMentorContainerBy(message["data"]["messageId"]);
+      }
+    };
     _firebaseMessaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        fetchAllAuthNotificationIfLoggedIn();
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        fetchAllAuthNotificationIfLoggedIn();
-      },
-      onResume: (Map<String, dynamic> message) async {
-        fetchAllAuthNotificationIfLoggedIn();
-      },
-    );
+        onMessage: cofigureFunction,
+        onLaunch: cofigureFunction,
+        onResume: cofigureFunction);
     fcmUserTokenControl();
   }
 

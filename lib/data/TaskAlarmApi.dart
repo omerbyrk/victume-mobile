@@ -47,7 +47,6 @@ class TaskAlarmApi extends BaseApi {
   }
 
   Future<TaskAlarmSaveResult> save(TaskAlarmDTO taskAlarmDTO) async {
-    print(taskAlarmDTO.toMap());
     dynamic response = await dioClient.post("${Endpoints.task_alarm}",
         data: {"insert": taskAlarmDTO.toMap()});
 

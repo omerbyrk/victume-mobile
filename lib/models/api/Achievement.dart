@@ -10,6 +10,7 @@ class Achievement extends ApiModelBase {
   String userId;
   bool result;
   bool active;
+  String resultParameterValueId;
 
   Achievement(
       {this.id,
@@ -19,6 +20,7 @@ class Achievement extends ApiModelBase {
       this.targetDate,
       this.userId,
       this.active,
+      this.resultParameterValueId,
       this.result});
 
   factory Achievement.fromMap(Map<String, dynamic> map) {
@@ -30,6 +32,7 @@ class Achievement extends ApiModelBase {
         targetDate: MapConverter.toDateTime(map["targetDate"]),
         userId: map["userId"],
         result: map["result"],
+        resultParameterValueId: map["resultParameterValueId"],
         active: map["active"]);
   }
 }

@@ -1,19 +1,21 @@
-import 'package:victume_mobile/constants/app_theme.dart';
-import 'package:victume_mobile/constants/enums.dart';
-import 'package:victume_mobile/models/widget/Message.dart';
-import 'package:victume_mobile/stores/message/message_store.dart';
+import 'package:victume_mobile/main.dart';
+import 'package:victume_mobile/stores/user_profile/user_profile_message_store.dart';
+import 'package:victume_mobile/ui/ScreenStatefulBase.dart';
 import 'package:victume_mobile/utils/textstyle/TextStyles.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class MessageTextField extends StatefulWidget {
+
+  MessageTextField();
+
   @override
   _MessageTextFieldState createState() => _MessageTextFieldState();
 }
 
-class _MessageTextFieldState extends State<MessageTextField> {
-  MessageStore _messageStore;
+class _MessageTextFieldState extends ScreenStatefulBase<MessageTextField> {
   TextEditingController _textEditingController = new TextEditingController();
+  UserProfileMessageStore _messageContainerController =
+      appComponent.getUserProfileMessageStore();
   FocusNode _textFocusNode = FocusNode();
 
   @override
@@ -24,7 +26,6 @@ class _MessageTextFieldState extends State<MessageTextField> {
 
   @override
   Widget build(BuildContext context) {
-    _messageStore = Provider.of<MessageStore>(context, listen: false);
     return Container(
       child: Row(
         children: <Widget>[
@@ -52,10 +53,10 @@ class _MessageTextFieldState extends State<MessageTextField> {
         textInputAction: TextInputAction.send,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-          hintText: "Type something...",
+          hintText: "Mesajınızı yazınız...",
           contentPadding: EdgeInsets.symmetric(
-            horizontal: 16.0,
-            vertical: 15.0,
+            horizontal: this.calSizeForDevice(16.0),
+            vertical: this.calSizeForDevice(15.0),
           ),
           suffixIcon: Material(
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -63,11 +64,11 @@ class _MessageTextFieldState extends State<MessageTextField> {
             child: IconButton(
               icon: Icon(Icons.send),
               color: Colors.black54,
-              onPressed: () {
+              onPressed: () async {
                 if (_textEditingController.text.isNotEmpty) {
-                  this._messageStore.send(Message(
-                      message: _textEditingController.text,
-                      type: MessageCardType.SENDER));
+                  await this
+                      ._messageContainerController
+                      .sendMessageToMentor(_textEditingController.text);
                   WidgetsBinding.instance.addPostFrameCallback(
                       (_) => _textEditingController.clear());
                 }

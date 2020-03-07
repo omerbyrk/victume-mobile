@@ -23,7 +23,6 @@ class UserProgramView extends ApiModelBase {
       this.active});
 
   factory UserProgramView.fromMap(Map<String, dynamic> map) {
-    print(map["finishDate"]);
     return UserProgramView(
         id: map["_id"],
         user: MapConverter.toObject<User>(

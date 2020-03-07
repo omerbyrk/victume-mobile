@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:victume_mobile/constants/enums.dart';
+import 'package:victume_mobile/data/ParameterValueApi.dart';
 import 'package:victume_mobile/main.dart';
 import 'package:victume_mobile/models/api/AchievementView.dart';
+import 'package:victume_mobile/models/api/ParameterValue.dart';
 import 'package:victume_mobile/stores/achievement/achievement_list_store.dart';
 import 'package:victume_mobile/stores/notification/notification_sender.dart';
 import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
@@ -171,27 +173,32 @@ class _AchievementListScreenState
         : "Hedefi tamamladığınızdan emin misiniz?";
 
     showAlertDialog(title, description, onAcceptAction: () async {
-      await _achievementListStore.updateResultAchievement(
-          achievementView.id, !achievementView.result);
       if (!achievementView.result) {
         // bu durumda hedefi tamamlamış oluyor
-        this._achievementListStore.setShowCongratulations(true);
-        doDelayedTask(() => animationController.forward());
         this
             ._notificationSenderStore
             .sendAchievementDoneNotification(achievementView.parameterName);
-        await this._achievementListStore.setNewParameterValue(
-              achievementView.parameterValueId,
-              achievementView.targetValue,
-            );
+        ParameterValue parameterValue = await this
+            ._achievementListStore
+            .setNewParameterValueAsDefault(NewParameterValueAsDefaultDTO(
+                parameterId: achievementView.parameterId,
+                userId: achievementView.userId,
+                value: achievementView.targetValue));
+        await _achievementListStore.updateResultAchievement(
+            achievementView.id, true, parameterValue.id);
+
+        this._achievementListStore.setShowCongratulations(true);
+        doDelayedTask(() => animationController.forward());
       } else {
         this
             ._notificationSenderStore
             .sendAchievementBackNotification(achievementView.parameterName);
-        await this._achievementListStore.setNewParameterValue(
-              achievementView.parameterValueId,
-              achievementView.currentValue,
+        await this._achievementListStore.setParentParameterValueAsDefault(
+              achievementView.userId,
+              achievementView.parameterId,
             );
+        await _achievementListStore.updateResultAchievement(
+            achievementView.id, false, null);
       }
       await _achievementListStore
           .setAchievementList(_userProfileStore.authenticatedUser.id);

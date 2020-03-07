@@ -106,7 +106,7 @@ class _UserProfileTopWidgetState
                               color: Colors.white,
                             ),
                             text: Text(
-                              "Basarım",
+                              "Başarım",
                               style: TextStyles.smallText
                                   .whiteColor()
                                   .isBolder()
@@ -147,7 +147,6 @@ class _UserProfileTopWidgetState
         maxHeight: 1920,
         maxWidth: 1080);
     if (image != null) {
-      print(image.lengthSync());
       userProfileStore.uploadPhoto(image);
     }
   }

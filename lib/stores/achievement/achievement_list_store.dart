@@ -4,6 +4,7 @@ import 'package:victume_mobile/data/AchievementApi.dart';
 import 'package:victume_mobile/data/ParameterValueApi.dart';
 import 'package:victume_mobile/main.dart';
 import 'package:victume_mobile/models/api/AchievementView.dart';
+import 'package:victume_mobile/models/api/ParameterValue.dart';
 import 'package:victume_mobile/stores/base_store.dart';
 import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
 
@@ -54,10 +55,11 @@ abstract class _AchievementListStore extends BaseStore with Store {
 
   @action
   Future<void> updateResultAchievement(
-      String achievementId, bool result) async {
+      String achievementId, bool result, String resultParameterValueId) async {
     try {
       this.loading = true;
-      await _achievementApi.updateBy(achievementId, {"result": result});
+      await _achievementApi.updateBy(achievementId,
+          {"result": result, "resultParameterValueId": resultParameterValueId});
     } on DioError catch (err) {
       uiMessageStore.setError(err.response.data["message"]);
     } finally {
@@ -69,14 +71,47 @@ abstract class _AchievementListStore extends BaseStore with Store {
       String parameterValueId, String value) async {
     try {
       this.loading = true;
-      await _parameterValueApi
-          .update(parameterValueId, {"value": value});
+      await _parameterValueApi.update(parameterValueId, {"value": value});
       _userProfileStore.setAuthUserParameters();
     } on DioError catch (err) {
       uiMessageStore.setError(err.response.data["message"]);
     } finally {
       this.closeLoading();
     }
+  }
+
+  @action
+  Future<ParameterValue> setNewParameterValueAsDefault(
+      NewParameterValueAsDefaultDTO newParameterAsDefaultDTO) async {
+    ParameterValue parameterValue;
+    try {
+      this.loading = true;
+      parameterValue = await _parameterValueApi
+          .setNewParameterValueAsDefault(newParameterAsDefaultDTO);
+      _userProfileStore.setAuthUserParameters();
+    } on DioError catch (err) {
+      uiMessageStore.setError(err.response.data["message"]);
+    } finally {
+      this.closeLoading();
+    }
+    return parameterValue;
+  }
+
+  @action
+  Future<void> setParentParameterValueAsDefault(
+      String userId, String parameterId) async {
+    ParameterValue parameterValue;
+    try {
+      this.loading = true;
+      parameterValue = await _parameterValueApi
+          .setParentParameterValueAsDefault(userId, parameterId);
+      _userProfileStore.setAuthUserParameters();
+    } on DioError catch (err) {
+      uiMessageStore.setError(err.response.data["message"]);
+    } finally {
+      this.closeLoading();
+    }
+    return parameterValue;
   }
 
   @action

@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:victume_mobile/data/AchievementApi.dart';
+import 'package:victume_mobile/data/MessageApi.dart';
+import 'package:victume_mobile/data/MessageContainerApi.dart';
 import 'package:victume_mobile/data/NotificationUserApi.dart';
 import 'package:victume_mobile/data/ParameterApi.dart';
 import 'package:victume_mobile/data/ParameterValueApi.dart';
@@ -32,7 +34,7 @@ class NetworkModule {
       ..options.receiveTimeout = Endpoints.receiveTimeout
       ..options.headers = {'Content-Type': 'application/json; charset=utf-8'};
 
-    _dio.interceptors.add(LogInterceptor(responseBody: true));
+    //_dio.interceptors.add(LogInterceptor(responseBody: true));
     _dio.interceptors
         .add(InterceptorsWrapper(onRequest: (Options options) async {
       // getting shared pref instance
@@ -51,8 +53,6 @@ class NetworkModule {
               "${Endpoints.apiUrl}${Endpoints.refreshToken}",
               options:
                   new Options(headers: {"Authorization": "Bearer $token"}));
-          print("Token is finished");
-          print(response);
           String newToken = response.data["result"]["token"];
           bool tokenResult =
               await preferences.setString(Preferences.auth_token, newToken);
@@ -113,4 +113,11 @@ class NetworkModule {
 
   @provide
   UserFileApi provideUserFileApi() => UserFileApi(provideDioClient());
+
+  @provide
+  MessageContainerApi provideMessageContainerApi() =>
+      MessageContainerApi(provideDioClient());
+
+  @provide
+  MessageApi provideMessageApi() => MessageApi(provideDioClient());
 }

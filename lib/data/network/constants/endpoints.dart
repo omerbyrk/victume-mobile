@@ -5,9 +5,9 @@ class Endpoints {
 
   //static const String baseUrl = "http://192.168.2.220:5000"; // nenemler
 
-  //static const String baseUrl = "http://192.168.1.48:5000"; // ev
+   static const String baseUrl = "http://192.168.1.48:5000"; // ev
 
-    static const String baseUrl = "http://192.168.43.124:5000"; // nenemler
+  // static const String baseUrl = "http://192.168.43.124:5000"; // tel
   // base url
   static const String apiUrl = "$baseUrl/api/v1";
   // receiveTimeout
@@ -25,6 +25,10 @@ class Endpoints {
   static const String authenticatedUserDefaultParameters =
       "/views/parameter-and-default-value/authenticated_user";
   static const String updateParameterValue = "/parameter-value";
+  static const String set_new_parameter_value_as_default =
+      "/parameter-value/set_new_parameter_value_as_default";
+  static const String set_parent_parameter_value_as_default =
+      "/parameter-value/set_parent_parameter_value_as_default";
 
   // user-program
   static const String authenticatedUserPrograms =
@@ -63,4 +67,15 @@ class Endpoints {
   static const String user_file_insert = "/user-file/";
   static const String user_file_delete = "/user-file/";
   static const String user_file_get_all = "/user-file/get_all";
+
+  // message
+  static const String message_container_get_auth_user_and_mentor_container =
+      "/message-container/get_auth_user_and_mentor_container";
+  static const String message_container_insert = "/message-container/";
+  static const String message_send = "/message/send";
+  static const String message_base = "/message";
+  static const String message_get_all =
+      "/message/get_all_by_message_container_id";
+  static const String message_set_readded =
+      "/message/set_readded_by_message_container_id_and_user_id";
 }

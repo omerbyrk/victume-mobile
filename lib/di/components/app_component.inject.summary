@@ -202,6 +202,34 @@
             "dependencies": []
           },
           {
+            "name": "getMessageContainerApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/MessageContainerApi.dart#MessageContainerApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "getMessageApi",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/data/MessageApi.dart#MessageApi",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
             "name": "getSharedPreferenceHelper",
             "kind": "method",
             "injectedType": {
@@ -221,6 +249,20 @@
             "injectedType": {
               "lookupKey": {
                 "root": "asset:victume_mobile/lib/stores/user_profile/user_profile_store.dart#UserProfileStore",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": false,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
+            "name": "getUserProfileMessageStore",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/stores/user_profile/user_profile_message_store.dart#UserProfileMessageStore",
                 "qualifier": null
               },
               "isProvider": false

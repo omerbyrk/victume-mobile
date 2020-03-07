@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:victume_mobile/constants/app_theme.dart';
 import 'package:victume_mobile/constants/enums.dart';
+import 'package:victume_mobile/main.dart';
 import 'package:victume_mobile/models/api/AchievementView.dart';
 import 'package:victume_mobile/stores/achievement/achievement_list_store.dart';
+import 'package:victume_mobile/stores/user_profile/user_profile_store.dart';
 import 'package:victume_mobile/ui/ScreenStatelessBase.dart';
 import 'package:victume_mobile/utils/HelpfulFunction.dart';
 import 'package:victume_mobile/utils/TimeAgoHelper.dart';
@@ -16,6 +18,7 @@ class AchievementCard extends ScreenStatelessBase {
   Function(AchievementView) onDeleteButtonAction;
   Function(AchievementView) onResultToggleButtonAction;
   AchievementListStore _achievementListStore;
+  UserProfileStore _userProfileStore = appComponent.getUserProfileStore();
 
   AchievementCard(
       {this.achievementView,
@@ -215,13 +218,22 @@ class AchievementCard extends ScreenStatelessBase {
           SizedBox(
             height: this.calSizeForDevice(20),
           ),
-          OutlineButton.icon(
-              onPressed: () => onResultToggleButtonAction(achievementView),
-              icon: Icon(Icons.restore),
-              label: Text("Geri Al"),
-              textColor: Colors.white,
-              borderSide: BorderSide(color: Colors.white),
-              color: Colors.white)
+          achievementView.resultParameterValueId ==
+                      _userProfileStore
+                          .findFromAuthUserParamsBy(achievementView.parameterId)
+                          .parameterValue
+                          .id &&
+                  !_achievementListStore.achievementList.any((ach) =>
+                      ach.parameterId == achievementView.parameterId &&
+                      !ach.result)
+              ? OutlineButton.icon(
+                  onPressed: () => onResultToggleButtonAction(achievementView),
+                  icon: Icon(Icons.restore),
+                  label: Text("Geri Al"),
+                  textColor: Colors.white,
+                  borderSide: BorderSide(color: Colors.white),
+                  color: Colors.white)
+              : Container()
         ],
       ),
     );

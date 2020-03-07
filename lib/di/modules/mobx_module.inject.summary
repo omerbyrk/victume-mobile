@@ -21,6 +21,20 @@
             "dependencies": []
           },
           {
+            "name": "provideUserProfileMessageStore",
+            "kind": "method",
+            "injectedType": {
+              "lookupKey": {
+                "root": "asset:victume_mobile/lib/stores/user_profile/user_profile_message_store.dart#UserProfileMessageStore",
+                "qualifier": null
+              },
+              "isProvider": false
+            },
+            "singleton": true,
+            "asynchronous": false,
+            "dependencies": []
+          },
+          {
             "name": "provideNotificationSenderStore",
             "kind": "method",
             "injectedType": {

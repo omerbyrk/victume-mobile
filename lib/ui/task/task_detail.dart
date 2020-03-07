@@ -230,8 +230,6 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
         theme: DatePickerTheme(
             doneStyle: TextStyles.largeText.primaryColor().isBolder().ok()),
         onConfirm: (datetime) async {
-      print(datetime);
-      print(datetime.toUtc().toIso8601String());
       if (datetime != null) {
         this._taskDetailStore.saveOrUpdateTaskAlarm(TaskAlarmDTO(
             alarmTime: datetime,

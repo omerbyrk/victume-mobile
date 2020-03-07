@@ -199,6 +199,13 @@ mixin _$UserProfileStore on _UserProfileStore, Store {
         .run(() => super.setReaddedAllAuthUserNotifications());
   }
 
+  final _$initStoreAsyncAction = AsyncAction('initStore');
+
+  @override
+  Future<void> initStore() {
+    return _$initStoreAsyncAction.run(() => super.initStore());
+  }
+
   final _$closeLoadingAsyncAction = AsyncAction('closeLoading');
 
   @override

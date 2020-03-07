@@ -10,7 +10,6 @@ class ProfileApi extends BaseApi {
 
   Future<String> uploadPhoto(String profileId, File photo) async {
     String fileName = photo.path.split('/').last;
-    print(fileName);
     FormData data = FormData.from({
       "photo": UploadFileInfo(photo, fileName,
           contentType: ContentType.parse("image/jpeg"))

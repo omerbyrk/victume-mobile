@@ -58,7 +58,6 @@ class NotificationUserApi extends BaseApi {
       String notificationUserId) async {
     dynamic response = await this.dioClient.get(
         "${Endpoints.get_notification_image}/$notificationUserId");
-    print(response["result"]["image"]);
     return response["result"]["image"];
   }
 }

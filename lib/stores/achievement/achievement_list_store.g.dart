@@ -74,9 +74,31 @@ mixin _$AchievementListStore on _AchievementListStore, Store {
       AsyncAction('updateResultAchievement');
 
   @override
-  Future<void> updateResultAchievement(String achievementId, bool result) {
-    return _$updateResultAchievementAsyncAction
-        .run(() => super.updateResultAchievement(achievementId, result));
+  Future<void> updateResultAchievement(
+      String achievementId, bool result, String resultParameterValueId) {
+    return _$updateResultAchievementAsyncAction.run(() => super
+        .updateResultAchievement(
+            achievementId, result, resultParameterValueId));
+  }
+
+  final _$setNewParameterValueAsDefaultAsyncAction =
+      AsyncAction('setNewParameterValueAsDefault');
+
+  @override
+  Future<ParameterValue> setNewParameterValueAsDefault(
+      NewParameterValueAsDefaultDTO newParameterAsDefaultDTO) {
+    return _$setNewParameterValueAsDefaultAsyncAction.run(
+        () => super.setNewParameterValueAsDefault(newParameterAsDefaultDTO));
+  }
+
+  final _$setParentParameterValueAsDefaultAsyncAction =
+      AsyncAction('setParentParameterValueAsDefault');
+
+  @override
+  Future<void> setParentParameterValueAsDefault(
+      String userId, String parameterId) {
+    return _$setParentParameterValueAsDefaultAsyncAction
+        .run(() => super.setParentParameterValueAsDefault(userId, parameterId));
   }
 
   final _$closeLoadingAsyncAction = AsyncAction('closeLoading');
