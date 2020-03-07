@@ -137,8 +137,8 @@ class _MessageScreenState extends ScreenStatefulBase<MessageScreen> {
 
   _scrollToDown() {
     doDelayedTask(() {
-      _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-          duration: Duration(milliseconds: 250), curve: Curves.easeIn);
+      _scrollController.animateTo(_scrollController.position.maxScrollExtent - 5,
+          duration: Duration(milliseconds: 250), curve: Curves.linear);
       _messageContainerController.setMessageAsReadded();
     }, duration: Duration(milliseconds: 100));
   }
