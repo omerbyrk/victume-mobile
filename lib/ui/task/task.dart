@@ -1,3 +1,4 @@
+import 'package:victume_mobile/constants/app_theme.dart';
 import 'package:victume_mobile/constants/enums.dart';
 import 'package:victume_mobile/stores/task/task_store.dart';
 import 'package:victume_mobile/ui/ScreenStatefulBase.dart';
@@ -149,8 +150,8 @@ class _TaskScreenState extends ScreenStatefulBase<TaskScreen> {
           return Container();
 
         return CustomRoundedTextCard(
-          backColor: Colors.deepOrange[100],
-          borderColor: Colors.deepOrange[200],
+          backColor: AppColors.orange[50],
+          borderColor: AppColors.orange[200],
           margin: EdgeInsets.only(
               top: this.calSizeForDevice(5.0),
               left: this.calSizeForDevice(6.0),
@@ -171,7 +172,7 @@ class _TaskScreenState extends ScreenStatefulBase<TaskScreen> {
                     Text(
                       "Dikkat Edilmesi Gerekenler",
                       style: TextStyles.middleText
-                          .color(Colors.deepOrange[900])
+                          .color(AppColors.deepOrange[900])
                           .isBolder()
                           .ok(),
                       textAlign: TextAlign.justify,
@@ -179,7 +180,7 @@ class _TaskScreenState extends ScreenStatefulBase<TaskScreen> {
                     Icon(
                       Icons.details,
                       size: this.calIconSize(IconSizeType.xSmall),
-                      color: Colors.deepOrange[900],
+                      color: AppColors.deepOrange[900],
                     )
                   ],
                 ),
@@ -223,7 +224,7 @@ class _TaskScreenState extends ScreenStatefulBase<TaskScreen> {
             children: <Widget>[
               Icon(
                 Icons.warning,
-                color: Colors.deepOrange[900],
+                color: AppColors.deepOrange[900],
               ),
               SizedBox(
                 width: this.calSizeForDevice(16),
@@ -233,7 +234,7 @@ class _TaskScreenState extends ScreenStatefulBase<TaskScreen> {
                 warning,
                 style: TextStyles.smallText
                     .isBolder()
-                    .color(Colors.deepOrange[900])
+                    .color(AppColors.deepOrange[900])
                     .ok(),
                 textAlign: TextAlign.justify,
               )),

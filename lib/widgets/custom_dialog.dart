@@ -51,13 +51,13 @@ class CustomDialog extends StatelessWidget {
             ),
           ),
           Divider(
-            color: AppColors.green[500],
+            color: AppColors.purple[500],
           ),
           SizedBox(height: 5.0),
           Text(description, style: TextStyles.smallText.isBolder().ok()),
           SizedBox(height: 5.0),
           Divider(
-            color: AppColors.green[500],
+            color: AppColors.purple[500],
           ),
           Row(
             mainAxisSize: MainAxisSize.max,

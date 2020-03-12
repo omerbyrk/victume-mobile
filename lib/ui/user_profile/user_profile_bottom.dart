@@ -40,7 +40,7 @@ class _UserProfileBottomWidgetState
         children: <Widget>[
           _buildBottomBodyHeader(),
           Divider(
-            color: AppColors.green[500].withOpacity(.7),
+            color: AppColors.purple[500].withOpacity(.7),
             thickness: 1.2,
           ),
           _buildBottomBodyContent()
@@ -81,7 +81,7 @@ class _UserProfileBottomWidgetState
                 "HEPSİ(${_userProfileStore.authUserProgramDataCount})",
                 style: TextStyles.middleText
                     .isBolder()
-                    .color(AppColors.green[700])
+                    .color(AppColors.purple[700])
                     .ok(),
               ),
             ),
@@ -122,7 +122,7 @@ class _UserProfileBottomWidgetState
                     trailing: Icon(
                       Icons.navigate_next,
                       size: this.calIconSize(IconSizeType.xxLarge),
-                      color: AppColors.green[500],
+                      color: AppColors.purple[500],
                     ),
                     dense: true,
                   );

@@ -122,6 +122,7 @@ class _AchievementListScreenState
           children: <Widget>[
             Column(
               children: <Widget>[
+                SizedBox(height: this.calSizeForDevice(15),),
                 Observer(
                   builder: (_) {
                     return Expanded(

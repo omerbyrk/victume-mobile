@@ -50,7 +50,7 @@ class _UserProfileScreenState extends ScreenStatefulBase<UserProfileScreen> {
 
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.green[600],
+      backgroundColor: AppColors.purple[600],
       elevation: 0,
       title: Row(
         children: <Widget>[

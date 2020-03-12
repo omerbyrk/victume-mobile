@@ -73,7 +73,7 @@ class AchievementCard extends ScreenStatelessBase {
         _buildValueAndDateChipColumn(
             achievementView.targetValue,
             achievementView.targetDate,
-            AppColors.green[300],
+            Colors.green[300],
             CrossAxisAlignment.end)
       ],
     );
@@ -105,7 +105,7 @@ class AchievementCard extends ScreenStatelessBase {
                 end: Alignment.center,
                 colors: [
                   Colors.red[900],
-                  AppColors.green[300],
+                  Colors.green[300],
                 ],
               ).createShader(Rect.fromLTRB(0, 0, bounds.width, bounds.height));
             },
@@ -146,13 +146,13 @@ class AchievementCard extends ScreenStatelessBase {
     if (achievementView.result) return Container();
 
     return Positioned(
-        top: 0,
+        top: -8,
         right: 15,
         child: InkWell(
           onTap: () => this.onResultToggleButtonAction(achievementView),
           child: Icon(
             Icons.done_all,
-            color: achievementView.result ? Colors.green : Colors.blueGrey,
+            color: Colors.green[600],
             size: this.calIconSize(IconSizeType.xMega),
           ),
         ));
@@ -162,13 +162,13 @@ class AchievementCard extends ScreenStatelessBase {
     if (achievementView.result) return Container();
 
     return Positioned(
-        top: 0,
+        top: -8,
         left: 15,
         child: InkWell(
           onTap: () => this.onDeleteButtonAction(achievementView),
           child: Icon(
             Icons.delete,
-            color: Colors.blueGrey,
+            color: Colors.red[600],
             size: this.calIconSize(IconSizeType.xMega),
           ),
         ));

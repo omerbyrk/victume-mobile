@@ -46,7 +46,7 @@ class _MessageScreenState extends ScreenStatefulBase<MessageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      backgroundColor: AppColors.green[100],
+      backgroundColor: AppColors.purple[50],
       body: _buildBody(),
     );
   }
@@ -80,7 +80,7 @@ class _MessageScreenState extends ScreenStatefulBase<MessageScreen> {
                     _messageContainerController.mentorProfile.photo, "N"),
                 height: 45,
                 width: 45,
-                color: AppColors.green[600].withOpacity(.15),
+                color: AppColors.purple[600].withOpacity(.15),
                 colorBlendMode: BlendMode.color,
                 fit: BoxFit.cover,
               );

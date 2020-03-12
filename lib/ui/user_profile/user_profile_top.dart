@@ -44,7 +44,7 @@ class _UserProfileTopWidgetState
             height: this.calHeight(40),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: <Color>[AppColors.green[600], AppColors.green[800]],
+                colors: <Color>[AppColors.purple[600], AppColors.purple[800]],
               ),
             ),
           ),
@@ -95,9 +95,9 @@ class _UserProfileTopWidgetState
                             onPressed: () {},
                             gradient: LinearGradient(
                               colors: <Color>[
-                                Colors.green[800],
-                                Colors.green[600],
-                                Colors.green[700],
+                                AppColors.orange[700],
+                                AppColors.orange[600],
+                                AppColors.orange[800],
                               ],
                             ),
                             icon: Icon(
@@ -188,7 +188,7 @@ class _UserProfileTopWidgetState
                                     .authenticatedUser?.profile?.fullname),
                             height: this.calHeight(18),
                             width: this.calWidth(36),
-                            color: AppColors.green[600].withOpacity(.15),
+                            color: AppColors.purple[500].withOpacity(.15),
                             colorBlendMode: BlendMode.color,
                             fit: BoxFit.cover,
                           ),

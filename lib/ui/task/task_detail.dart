@@ -122,7 +122,7 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
               Icons.alarm_add,
               color: this._taskDetailStore.hasAlarm
                   ? Colors.green
-                  : Colors.blueGrey,
+                  : Colors.blueGrey.withOpacity(.65),
               size: this.calIconSize(IconSizeType.xMega),
             ),
           ),
@@ -145,7 +145,7 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
                     Icons.done_all,
                     color: this._taskDetailStore.hasResult
                         ? Colors.green
-                        : Colors.blueGrey,
+                        : Colors.blueGrey.withOpacity(.65),
                     size: this.calIconSize(IconSizeType.xMega),
                   ),
                 );
@@ -164,7 +164,7 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
           Icon(
             Icons.done,
             size: this.calIconSize(IconSizeType.Large),
-            color: AppColors.green[500],
+            color: AppColors.deepOrange[900],
           ),
           SizedBox(
             width: this.calSizeForDevice(8),
@@ -197,7 +197,7 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
               children: <Widget>[
                 Icon(
                   Icons.warning,
-                  color: Colors.deepOrange[900],
+                  color: AppColors.deepOrange[900],
                   size: this.calIconSize(IconSizeType.Large),
                 ),
                 SizedBox(
@@ -209,7 +209,7 @@ class _TaskDetailWidgetState extends ScreenStatefulBase<TaskDetailWidget> {
                     child: Text(
                       this.widget.task.warning,
                       style: TextStyles.smallText
-                          .color(Colors.deepOrange[900])
+                          .color(AppColors.deepOrange[900])
                           .isBolder()
                           .ok(),
                       textAlign: TextAlign.justify,

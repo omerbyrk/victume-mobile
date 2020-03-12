@@ -34,41 +34,53 @@ final ThemeData themeData = new ThemeData(
     iconTheme:
         IconThemeData(size: screenUtils.getDeviceIconSize(IconSizeType.Normal)),
     brightness: Brightness.light,
-    primarySwatch: MaterialColor(AppColors.green[500].value, AppColors.green),
-    primaryColor: AppColors.green[500],
+    primarySwatch: MaterialColor(AppColors.purple[500].value, AppColors.purple),
+    primaryColor: AppColors.purple[500],
     primaryColorBrightness: Brightness.light,
     textTheme: TextTheme(
         body1: TextStyles.xSmallText.isBolder().ok(),
         button: TextStyles.xSmallText.isBolder().ok()),
-    accentColor: AppColors.green[500],
+    accentColor: AppColors.purple[500],
     accentColorBrightness: Brightness.light);
 
 class AppColors {
   AppColors._(); // this basically makes it so you can instantiate this class
 
-  static const Map<int, Color> green = const <int, Color>{
-    50: const Color(0xFFf2f8ef),
-    100: const Color(0xFFdfedd8),
-    200: const Color(0xFFc9e2be),
-    300: const Color(0xFFb3d6a4),
-    400: const Color(0xFFa3cd91),
-    500: const Color(0xFF93c47d),
-    600: const Color(0xFF8bbe75),
-    700: const Color(0xFF80b66a),
-    800: const Color(0xFF76af60),
-    900: const Color(0xFF64a24d)
+  static const Map<int, Color> purple = const <int, Color>{
+    50: const Color(0xFFF4E3F7),
+    100: const Color(0xFFE1BAE8),
+    200: const Color(0xFFD597E0),
+    300: const Color(0xFFC674D5),
+    400: const Color(0xFFBA57CB),
+    500: const Color(0xFFAB39BF),
+    600: const Color(0xFFA02FB4),
+    700: const Color(0xFF9C27B0),
+    800: const Color(0xFF931EA7),
+    900: const Color(0xFF88139C)
   };
 
   static const Map<int, Color> orange = const <int, Color>{
-    50: Colors.orange,
-    100: const Color(0xFFF2A270),
-    200: const Color(0xFFF2975F),
-    300: const Color(0xFFF18C4E),
-    400: const Color(0xFFEE813D),
-    500: const Color(0xFFEF772C),
-    600: const Color(0xFFEE7123),
-    700: const Color(0xFFEE6E1F),
-    800: const Color(0xFFEE630D),
-    900: const Color(0xFFEE5F07)
+    50: const Color(0xFFFCE4B0),
+    100: const Color(0xFFF6D182),
+    200: const Color(0xFFEFC56A),
+    300: const Color(0xFFE9BB57),
+    400: const Color(0xFFE4B348),
+    500: const Color(0xFFDDA939),
+    600: const Color(0xFFD9A32F),
+    700: const Color(0xFFDCA020),
+    800: const Color(0xFFD8980F),
+    900: const Color(0xFFD39206)
+  };
+  static const Map<int, Color> deepOrange = const <int, Color>{
+    50: const Color(0xFFFBE9E7),
+    100: const Color(0xFFFFCCBC),
+    200: const Color(0xFFFFAB91),
+    300: const Color(0xFFFF8A65),
+    400: const Color(0xFFFF7043),
+    500: const Color(0xFFFF5722),
+    600: const Color(0xFFF4511E),
+    700: const Color(0xFFE64A19),
+    800: const Color(0xFFD84315),
+    900: const Color(0xFFBF360C),
   };
 }

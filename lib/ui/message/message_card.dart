@@ -24,8 +24,8 @@ class MessageCard extends StatelessWidget {
           child: Card(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
-                side: BorderSide(width: 1.0, color: AppColors.green[600])),
-            color: AppColors.green[300],
+                side: BorderSide(width: 1.0, color: AppColors.purple[600])),
+            color: AppColors.purple[300],
             elevation: 5,
             child: Container(
               padding: EdgeInsets.all(12.0),

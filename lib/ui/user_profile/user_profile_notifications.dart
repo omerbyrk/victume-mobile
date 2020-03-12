@@ -57,7 +57,7 @@ class _UserProfileNotificationsState
   Widget build(BuildContext context) {
     return Material(
       elevation: 8.0,
-      color: AppColors.green[100],
+      color: AppColors.purple[50],
       child: Stack(
         children: <Widget>[_buildBody()],
       ),
@@ -87,7 +87,7 @@ class _UserProfileNotificationsState
             _userProfileStore.setNotificationImage(notification.id);
             return Container(
               color: !notification.isRead
-                  ? AppColors.green[300]
+                  ? AppColors.purple[300]
                   : Colors.transparent,
               padding: EdgeInsets.symmetric(
                   horizontal: this.calSizeForDevice(12.0),
@@ -110,7 +110,7 @@ class _UserProfileNotificationsState
                             "N"),
                         height: 50,
                         width: 50,
-                        color: AppColors.green[600].withOpacity(.15),
+                        color: AppColors.purple[600].withOpacity(.15),
                         colorBlendMode: BlendMode.color,
                         fit: BoxFit.cover,
                       );
