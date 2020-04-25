@@ -38,8 +38,9 @@ final ThemeData themeData = new ThemeData(
     primaryColor: AppColors.purple[500],
     primaryColorBrightness: Brightness.light,
     textTheme: TextTheme(
-        body1: TextStyles.xSmallText.isBolder().ok(),
-        button: TextStyles.xSmallText.isBolder().ok()),
+        body1: TextStyles.middleText.isBolder().ok(),
+        caption: TextStyles.middleText.isBolder().ok(),
+        button: TextStyles.middleText.isBolder().ok()),
     accentColor: AppColors.purple[500],
     accentColorBrightness: Brightness.light);
 

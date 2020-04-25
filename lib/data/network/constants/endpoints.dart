@@ -3,11 +3,13 @@ class Endpoints {
 
   //static const String baseUrl = "http://db-victume.tk"; // server
 
-  static const String baseUrl = "http://192.168.2.220:5000"; // nenemler
+  //static const String baseUrl = "http://192.168.2.220:5000"; // nenemler
 
   //static const String baseUrl = "http://192.168.1.48:5000"; // ev
 
   // static const String baseUrl = "http://192.168.43.124:5000"; // tel
+
+  static const String baseUrl = "https://victume-server.herokuapp.com"; // heroku
   // base url
   static const String apiUrl = "$baseUrl/api/v1";
   // receiveTimeout

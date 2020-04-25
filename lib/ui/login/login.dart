@@ -142,7 +142,7 @@ class _LoginScreenState extends ScreenStatefulBase<LoginScreen> {
         return TextFieldWidget(
           hint: Strings.login_et_user_email,
           inputType: TextInputType.emailAddress,
-          icon: Icons.person,
+          icon: Icons.email,
           iconColor: Colors.black54,
           textController: _userEmailController,
           inputAction: TextInputAction.next,
