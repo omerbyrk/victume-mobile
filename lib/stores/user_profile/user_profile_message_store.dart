@@ -57,6 +57,7 @@ abstract class _UserProfileMessageStore extends BaseStore with Store {
         }));
       } else {}
     } on DioError catch (err) {
+      print(err.error);
       uiMessageStore.setError(err.response.data["message"]);
     } finally {
       this.closeLoading();

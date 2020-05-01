@@ -17,7 +17,6 @@ class MessageContainerApi extends BaseApi {
   Future<MessageContainer> authUserAndMentorMessageContainer() async {
     dynamic response = await this.dioClient.get(
         "${Endpoints.message_container_get_auth_user_and_mentor_container}");
-    print(response);
     return MapConverter.toObject<MessageContainer>(response["result"]["data"],
         (container) => MessageContainer.fromMap(container));
   }

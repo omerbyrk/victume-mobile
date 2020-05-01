@@ -1,21 +1,19 @@
 class Endpoints {
   Endpoints._();
 
-  //static const String baseUrl = "http://db-victume.tk"; // server
 
   //static const String baseUrl = "http://192.168.2.220:5000"; // nenemler
 
-  //static const String baseUrl = "http://192.168.1.48:5000"; // ev
+  static const String baseUrl = "http://192.168.1.33:5000"; // ev
 
-  // static const String baseUrl = "http://192.168.43.124:5000"; // tel
 
-  static const String baseUrl = "https://victume-server.herokuapp.com"; // heroku
+  //static const String baseUrl = "http://victumedb.fastsoft.com.tr"; // heroku
   // base url
   static const String apiUrl = "$baseUrl/api/v1";
   // receiveTimeout
-  static const int receiveTimeout = 20000;
+  static const int receiveTimeout = 200000;
   // connectTimeout
-  static const int connectionTimeout = 10000;
+  static const int connectionTimeout = 100000;
 
   //user
   static const String singin = "/user/signin";

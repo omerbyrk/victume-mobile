@@ -15,6 +15,7 @@ class HelpfulFunction {
   }
 
   static String getFullPhotoPath(String photoPath, String fullname) {
+    print(photoPath);
     String placeHolder = "PP";
     if (fullname != null) {
       placeHolder = fullname.split(" ").map((name) => name[0]).join();

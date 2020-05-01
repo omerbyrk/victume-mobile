@@ -26,13 +26,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    print("Splahddd");
     Function cofigureFunction = (Map<String, dynamic> message) async {
-      print("SplashScreen");
       if (message["data"]["type"] == "NOTIFICATION") {
         fetchAllAuthNotificationIfLoggedIn();
       } else if (message["data"]["type"] == "MESSAGE") {
-        print(message);
         _messageStore
             .pushMessageToMentorContainerBy(message["data"]["messageId"]);
       }

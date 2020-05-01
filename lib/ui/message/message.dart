@@ -38,6 +38,10 @@ class _MessageScreenState extends ScreenStatefulBase<MessageScreen> {
       }
     });
     _messageContainerController.onPushedMessage = _scrollToDown;
+
+    if(_messageContainerController.mentorMessageContainer == null) {
+      print("Problem anlaşıldı");
+    }
     _scrollToDown();
     super.initState();
   }
@@ -77,7 +81,7 @@ class _MessageScreenState extends ScreenStatefulBase<MessageScreen> {
             child: Observer(builder: (_) {
               return Image.network(
                 HelpfulFunction.getFullPhotoPath(
-                    _messageContainerController.mentorProfile.photo, "N"),
+                    _messageContainerController.mentorProfile.photo, _messageContainerController.mentorProfile.fullname),
                 height: 45,
                 width: 45,
                 color: AppColors.purple[600].withOpacity(.15),
