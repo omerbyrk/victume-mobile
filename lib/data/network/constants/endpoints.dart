@@ -6,8 +6,7 @@ class Endpoints {
 
   static const String baseUrl = "http://192.168.1.33:5000"; // ev
 
-
-  //static const String baseUrl = "http://victumedb.fastsoft.com.tr"; // heroku
+ //static const String baseUrl = "http://victumedb.fastsoft.com.tr"; // heroku
   // base url
   static const String apiUrl = "$baseUrl/api/v1";
   // receiveTimeout

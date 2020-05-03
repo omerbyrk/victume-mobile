@@ -106,7 +106,7 @@ class _LoginScreenState extends ScreenStatefulBase<LoginScreen> {
   Widget _buildLeftSide() {
     return SizedBox.expand(
       child: Image.asset(
-        'assets/images/img_login2.jpg',
+        'assets/images/img_login4.jpg',
         fit: BoxFit.cover,
       ),
     );

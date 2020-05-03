@@ -87,7 +87,7 @@ dev_dependencies:
       ref: 7c3cbf6
 
 flutter_icons:
-  image_path: "assets/icons/ic_launcher.png"
+  image_path: "assets/icons/logo-bg.png"
   android: true
   ios: true
 

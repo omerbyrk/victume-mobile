@@ -18,7 +18,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="victume_mobile Project"
+        android:label="Dr. Buğra Buyrukçu"
         android:icon="@mipmap/ic_launcher">
 
         <activity
