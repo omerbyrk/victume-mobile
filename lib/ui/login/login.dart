@@ -68,10 +68,9 @@ class _LoginScreenState extends ScreenStatefulBase<LoginScreen> {
             builder: (context, orientation) {
               //variable to hold widget
               var child;
-
               //check to see whether device is in landscape or portrait
               //load widgets based on device orientation
-              orientation == Orientation.landscape
+              this.isKeyboardOpen
                   ? child = Row(
                       children: <Widget>[
                         Expanded(
@@ -79,7 +78,7 @@ class _LoginScreenState extends ScreenStatefulBase<LoginScreen> {
                           child: _buildLeftSide(),
                         ),
                         Expanded(
-                          flex: 1,
+                          flex: orientation == Orientation.portrait ? 2 : 1,
                           child: _buildRightSide(),
                         ),
                       ],
@@ -111,6 +110,8 @@ class _LoginScreenState extends ScreenStatefulBase<LoginScreen> {
       ),
     );
   }
+
+  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
   Widget _buildRightSide() {
     return Form(
