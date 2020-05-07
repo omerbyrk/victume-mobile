@@ -1,5 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.healty.victume">
+<manifest
+xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.healty.victume"
+    >
 
     <!-- The INTERNET permission is required for development. Specifically,
          flutter needs it to communicate with the running application
