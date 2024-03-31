@@ -6,6 +6,9 @@ A victume_mobile project created in flutter using MobX and Provider.
 
 The victume_mobile contains the minimal implementation required to create a new library or project. The repository code is preloaded with some basic components like basic app architecture, app theme, constants and required dependencies to create a new project. By using boiler plate code as standard initializer, we can have same patterns in all the projects that will inherit it. This will also help in reducing setup & development time by allowing you to use same code pattern and avoid re-writing from scratch.
 
+## Screenshots 
+![Screenshot1]([http://url/to/img.png](https://cdn.jsdelivr.net/gh/omerbyrk/webvify-public/omerbayrak-cv/victume-1.png))
+![Screenshot2]([http://url/to/img.png](https://cdn.jsdelivr.net/gh/omerbyrk/webvify-public/omerbayrak-cv/victume-2.png))
 ### victume_mobile Features:
 
 * Splash
