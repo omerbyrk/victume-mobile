@@ -8,7 +8,7 @@ The victume_mobile contains the minimal implementation required to create a new 
 
 ## Screenshots 
 ![Screenshot1](https://cdn.jsdelivr.net/gh/omerbyrk/webvify-public/omerbayrak-cv/victume-1.png)
-![Screenshot2]([http://url/to/img.png](https://cdn.jsdelivr.net/gh/omerbyrk/webvify-public/omerbayrak-cv/victume-2.png))
+![Screenshot2](https://cdn.jsdelivr.net/gh/omerbyrk/webvify-public/omerbayrak-cv/victume-2.png)
 ### victume_mobile Features:
 
 * Splash
